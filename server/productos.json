@@ -1,0 +1,19 @@
+{
+    "productos": [
+        {
+            "nombre": "pack quilmes",
+            "precioT": "700",
+            "precioU": "800"
+        },
+        {
+            "nombre": "pack andipa",
+            "precioT": "850",
+            "precioU": "950"
+        },
+        {
+            "nombre": "pack stella",
+            "precioT": "900",
+            "precioU": "1000"
+        }
+    ]
+}
