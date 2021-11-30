@@ -9,7 +9,7 @@
     padding: 8px;
   }
   
-  #tabla tr:nth-child(even){background-color: #f2f2f2;}
+  #tabla tr:nth-child(odd){background-color: #f2f2f2;}
   
   #tabla tr:hover {background-color: #ddd;}
   
@@ -19,4 +19,34 @@
     text-align: left;
     background-color: #6425ac;
     color: white;
+  }
+
+  .d-table {
+    min-width: 300px;
+    min-height: 300px;
+    background: lightgrey;
+    display: block;
+    width: 1px solid red;
+  }
+  
+  .d-table ul {
+    list-style-type: none;
+  }
+  
+  .d-column li {
+    padding: 0px;
+    display: inline-block;
+    border: 1px solid blue;
+    background: grey;
+    width: 50px;
+    height: 20px;
+  }
+  
+  .d-row li {
+    padding: 0px;
+    display: inline-block;
+    background: lightgrey;
+    border: 1px solid red;
+    width: 50px;
+    height: 20px;
   }

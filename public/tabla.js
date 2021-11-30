@@ -15,6 +15,7 @@ export function crearTabla(productos) {
     for (let i = 1; i < atributos.length; i++) {
       celdaValor(tr, document.createTextNode(atributos[i]));
     }
+    
     tabla.appendChild(tr);
   });
   console.log(tabla);
@@ -47,7 +48,6 @@ function celdaValor(parent, inner) {
       td.contentEditable = false;
     }
   };
-  td.onkeypress(e=>(console.log(e)));
 }
 function cambiarPrecio(e, producto, atributo) {
   if (isNaN(e.data)) e.preventDefault();
@@ -64,9 +64,9 @@ function celdaInput(text) {
   return input;
 }
 function selectContent(element) {
-    var range = document.createRange();
-    range.selectNodeContents(element);
-    var sel = window.getSelection();
-    sel.removeAllRanges();
-    sel.addRange(range);
+  var range = document.createRange();
+  range.selectNodeContents(element);
+  var sel = window.getSelection();
+  sel.removeAllRanges();
+  sel.addRange(range);
 }
