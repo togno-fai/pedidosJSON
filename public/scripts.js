@@ -1,4 +1,4 @@
-import { crearTabla } from "./tabla.js";
+import { Tabla } from "./tabla.js";
 
 const url = "http://localhost:5000/productos";
 const productos = fetchProductos(url);
@@ -13,7 +13,7 @@ async function fetchProductos(url) {
     .then((res) => res.json())
     .then((data) => {
       let cuerpo = document.getElementById("cuerpo");
-      let tabla = crearTabla(data.productos)
+      let tabla = Tabla(data.productos)
       cuerpo.appendChild(tabla);
     })
     .catch((err) => console.log(err));

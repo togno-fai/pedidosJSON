@@ -1,25 +1,37 @@
-export function crearTabla(productos) {
-  const tabla = crear("table");
-  tabla.className = "table";
-  tabla.id = "tabla";
-  let tr = crear("tr");
-  let atributos = Object.keys(productos[0]);
-  atributos.forEach((atributo) => {
-    celdaNombreColumna(tr, document.createTextNode(atributo));
-  });
-  tabla.appendChild(tr);
-  productos.forEach((producto) => {
+export function Tabla(listaItems) {
+  // crear cuerpo de la tabla
+  let tabla = crearTabla();
+  // agregar columnas
+  tabla.appendChild(crearColumnas(listaItems));
+  // agregar items
+  listaItems.forEach((listaItems) => {
     let tr = crear("tr");
-    let atributos = Object.values(producto);
+    let atributos = Object.values(listaItems);
     celdaClave(tr, document.createTextNode(atributos[0]));
     for (let i = 1; i < atributos.length; i++) {
-      celdaValor(tr, document.createTextNode(atributos[i]));
+      let txt = document.createElement("p");
+      txt.innerHTML = atributos[i];
+      celdaValor(tr, txt);
     }
     
     tabla.appendChild(tr);
   });
   console.log(tabla);
   return tabla;
+}
+function crearTabla(){
+  const tabla = crear("table");
+  tabla.className = "table";
+  tabla.id = "tabla";
+  return tabla;
+}
+function crearColumnas(listaItems){
+  let tr = crear("tr");
+  let nombresColumnas = Object.keys(listaItems[0]);
+  nombresColumnas.forEach((nombreColumna) => {
+    celdaNombreColumna(tr, document.createTextNode(nombreColumna));
+  });
+  return tr;
 }
 function crear(tag) {
   return document.createElement(tag);
@@ -48,20 +60,6 @@ function celdaValor(parent, inner) {
       td.contentEditable = false;
     }
   };
-}
-function cambiarPrecio(e, producto, atributo) {
-  if (isNaN(e.data)) e.preventDefault();
-  console.log(`[producto: ${producto}, atributo: ${atributo}] ` + e.data);
-}
-
-function celdaInput(text) {
-  var input = document.createElement("input");
-  input.setAttribute("type", "text");
-  input.focus();
-  input.value = text;
-  input.focus();
-  input.onkeydown = (e) => console.log(e);
-  return input;
 }
 function selectContent(element) {
   var range = document.createRange();
