@@ -1,5 +1,5 @@
 import { Tabla } from "./tabla.js"
-const url = "http://localhost:5000/productosconn";
+const url = "http://localhost:5000/productos";
 const productos = fetchProductos(url);
 const tablaActual = [];
 async function fetchProductos(url) {
@@ -10,8 +10,9 @@ async function fetchProductos(url) {
     },
   }).then((res) => res.json())
     .then((data) => {
+      console.log('aber') // borrar
       let cuerpo = document.getElementById("cuerpo");
-      let tabla = Tabla(data)
+      let tabla = Tabla(data.productos)
       cuerpo.appendChild(tabla);
     })
     .catch((err) => console.log(err));
