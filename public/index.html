@@ -8,14 +8,50 @@
 
   <title>prod</title>
   <link rel="stylesheet" href="styles.css">
-
 </head>
 
-<body id = "cuerpo">
+<body id="cuerpo">
 
   <h1>grilla de precios</h1>
-
-  <!-- your content here... -->
+  <form onsubmit="test()">
+    <ul class="flex-outer">
+      <li>
+        <label for="nombre">nom:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="nombre">
+      </li>
+      <li>
+        <label for="categoria">cat:</label>
+        <input type="text" id="categoria" name="categoria" placeholder="categoria">
+      </li>
+      <li>
+        <label for="precioT">pT:</label>
+        <input type="text" id="precioT" name="precioT" placeholder="precioT">
+      </li>
+      <li>
+        <label for="precioU">pU:</label>
+        <input type="text" id="precioU" name="precioU" placeholder="precioU">
+      </li>
+      <li>
+        <label for="botsub"></label>
+        <button type="submit">Submit</button>
+      </li>
+    </ul>
+  </form>
+  <script>
+    function test() {
+      fetch('localhost:5000/productos/', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ nombre: 'gancia', categoria: 'aperitivo', precioT: 600, precioU: 700 })
+      }).then(res => res.json())
+        .then(res => {
+          console.log(res);
+        });
+    }
+  </script>
   <script type="module" src="scripts.js"></script>
 </body>
 

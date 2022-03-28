@@ -1,5 +1,5 @@
 import { Tabla } from "./tabla.js"
-const url = "http://localhost:5000/productos";
+const url = "http://localhost:5000/productosconn";
 const productos = fetchProductos(url);
 const tablaActual = [];
 async function fetchProductos(url) {

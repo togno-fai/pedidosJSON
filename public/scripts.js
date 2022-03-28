@@ -1,7 +1,9 @@
 import { Tabla } from "./tabla.js"
-const url = "http://localhost:5000/productosconn";
+// const url = "http://nodejs.toctocgestion.com/productosconn";
+const url = "http://localhost:5000/productos";
 const productos = fetchProductos(url);
 const tablaActual = [];
+
 async function fetchProductos(url) {
   await fetch(url, {
     method: "GET",
@@ -15,4 +17,7 @@ async function fetchProductos(url) {
       cuerpo.appendChild(tabla);
     })
     .catch((err) => console.log(err));
+}
+function test2() {
+  alert(`The function 'test2' is executed`);
 }

@@ -1,52 +1,82 @@
-#tabla {
-    font-family: Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  #tabla td, #tabla th {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-  
-  #tabla tr:nth-child(odd){background-color: #f2f2f2;}
-  
-  #tabla tr:hover {background-color: #ddd;}
-  
-  #tabla th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #6425ac;
-    color: white;
-  }
+input,
+label,
+button {
+  margin: 1px;
+  font-size: 18px;
+}
+.flex-outer li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.flex-outer > li > label {
+  flex: 1 0 20px;
+  max-width: 50px;
+}
 
-  .d-table {
-    min-width: 300px;
-    min-height: 300px;
-    background: lightgrey;
-    display: block;
-    width: 1px solid red;
-  }
-  
-  .d-table ul {
-    list-style-type: none;
-  }
-  
-  .d-column li {
-    padding: 0px;
-    display: inline-block;
-    border: 1px solid blue;
-    background: grey;
-    width: 50px;
-    height: 20px;
-  }
-  
-  .d-row li {
-    padding: 0px;
-    display: inline-block;
-    background: lightgrey;
-    border: 1px solid red;
-    width: 50px;
-    height: 20px;
-  }
+.flex-outer > li > label + * {
+  flex: 1 0 60px;
+  max-width: 80px;
+}
+.flex-outer li button {
+  min-height: 20px;
+  border-radius: 10px;
+}
+
+#tabla {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#tabla td,
+#tabla th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#tabla tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+#tabla tr:hover {
+  background-color: #ddd;
+}
+
+#tabla th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #6425ac;
+  color: white;
+}
+
+.d-table {
+  min-width: 300px;
+  min-height: 300px;
+  background: lightgrey;
+  display: block;
+  width: 1px solid red;
+}
+
+.d-table ul {
+  list-style-type: none;
+}
+
+.d-column li {
+  padding: 0px;
+  display: inline-block;
+  border: 1px solid blue;
+  background: grey;
+  width: 50px;
+  height: 20px;
+}
+
+.d-row li {
+  padding: 0px;
+  display: inline-block;
+  background: lightgrey;
+  border: 1px solid red;
+  width: 50px;
+  height: 20px;
+}

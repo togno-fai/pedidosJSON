@@ -16,7 +16,6 @@ export function Tabla(listaItems) {
     
     tabla.appendChild(tr);
   });
-  console.log(tabla);
   return tabla;
 }
 function crearTabla(){
