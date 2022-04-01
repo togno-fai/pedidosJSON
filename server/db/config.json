@@ -1,7 +1,0 @@
-{ 
-    "host": "toctocgestion.com",
-    "database": "guille72_pruebaGestion",
-    "user": "guille72_lucas",
-    "password": "lucasPrueba",
-    "connectionLimit": 5
-  }
