@@ -13,7 +13,7 @@
 <body id="cuerpo">
 
   <h1>grilla de precios</h1>
-  <form onsubmit="test()">
+  <form onsubmit="post()">
     <ul class="flex-outer">
       <li>
         <label for="nombre">nom:</label>
@@ -25,11 +25,11 @@
       </li>
       <li>
         <label for="precioT">pT:</label>
-        <input type="text" id="precioT" name="precioT" placeholder="precioT">
+        <input type="number" id="precioT" name="precioT" placeholder="precioT">
       </li>
       <li>
         <label for="precioU">pU:</label>
-        <input type="text" id="precioU" name="precioU" placeholder="precioU">
+        <input type="number" id="precioU" name="precioU" placeholder="precioU">
       </li>
       <li>
         <label for="botsub"></label>
@@ -38,14 +38,21 @@
     </ul>
   </form>
   <script>
-    function test() {
-      fetch('localhost:5000/productos/', {
+    let exampleForm = document.querySelector('form');
+    exampleForm.addEventListener('submit', event => {
+      event.preventDefault();
+    });
+    function post() {
+      const inputs = exampleForm.querySelectorAll("input");
+      const postBody = Object.fromEntries([...inputs].map(
+        (i) => [i.id, (i.type != "number") ? i.value : (i.value == "") ? 0 : i.value]));
+      fetch('http://localhost:5000/producto/', {
         method: 'POST',
         headers: {
           'Accept': 'application/json, text/plain, */*',
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ nombre: 'gancia', categoria: 'aperitivo', precioT: 600, precioU: 700 })
+        body: JSON.stringify(postBody)
       }).then(res => res.json())
         .then(res => {
           console.log(res);

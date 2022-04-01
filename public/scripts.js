@@ -1,6 +1,6 @@
 import { Tabla } from "./tabla.js"
 // const url = "http://nodejs.toctocgestion.com/productosconn";
-const url = "http://localhost:5000/productos";
+const url = "http://localhost:5000/producto";
 const productos = fetchProductos(url);
 const tablaActual = [];
 

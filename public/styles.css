@@ -32,7 +32,8 @@ button {
 #tabla td,
 #tabla th {
   border: 1px solid #ddd;
-  padding: 8px;
+  padding: 5px;
+  height: 10px;
 }
 
 #tabla tr:nth-child(odd) {
