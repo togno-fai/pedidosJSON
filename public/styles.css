@@ -1,39 +1,49 @@
-input,
+.prod-form {
+  margin: 5px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  width: 100%;
+  align-items: start;
+  align-items: start;
+}
+.prod-form > div {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 0px 3px;
+}
+.prod-form div input,
 label,
 button {
+  padding: 1px;
   margin: 1px;
-  font-size: 18px;
-}
-.flex-outer li {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-}
-.flex-outer > li > label {
-  flex: 1 0 20px;
-  max-width: 50px;
+  font-size: 15px;
 }
 
-.flex-outer > li > label + * {
-  flex: 1 0 60px;
-  max-width: 80px;
+.prod-form > div > label {
+  width: 40px;
 }
-.flex-outer li button {
-  min-height: 20px;
+.prod-form button {
   border-radius: 10px;
+  margin: 5px 10px;
 }
 
 #tabla {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  width: 1%;
+  max-width: 100%;
+  white-space: nowrap;
 }
 
 #tabla td,
 #tabla th {
   border: 1px solid #ddd;
-  padding: 5px;
-  height: 10px;
+  padding: 1px 5px;
+  height: 1px;
+  line-height: 0px;
+  font-size: 15px;
 }
 
 #tabla tr:nth-child(odd) {
